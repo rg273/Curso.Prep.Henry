@@ -1,11 +1,21 @@
 // No cambies los nombres de las funciones.
 
+const { CONFIG_ERROR_UNKNOWN_OPTION } = require("simple-git/src/lib/tasks/clean");
+
 function crearGato(nombre, edad) {
   // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+  var MiprimerObjeto={
+    nombre : nombre,
+    edad : edad,
+    meow : function(){
+      return "Meow!";
+    }
+  }
+  return MiprimerObjeto;
 }
 
 
@@ -14,6 +24,9 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+
+  objeto[property] = null ;
+  return objeto
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -21,13 +34,25 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+  
+  objeto[metodo]();
+
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
+objetoMisterioso.numeroMisterioso = objetoMisterioso.numeroMisterioso * 5;
 
+return objetoMisterioso.numeroMisterioso;
+// var objMisterioso = {
+// numMisterioso : 4,
+// numFavorito:  7;
+// }
+// 
+// var result = objMisterioso.numMisterioso * 5;
+// return result;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -35,6 +60,8 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+  delete objeto[unaPropiedad];
+  return objeto;
 }
 
 function nuevoUsuario(nombre, email, password) {
